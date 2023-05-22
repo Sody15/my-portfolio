@@ -6,6 +6,7 @@ const About = () => {
     <Section
       title='About Me'
       description='Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology'
+      id='about'
     >
       <div className='grid grid-cols-2'>
         <div className='get-to-know'>
@@ -16,7 +17,7 @@ const About = () => {
           <h3 className='pb-8'>My Skills</h3>
           <div className='flex flex-wrap gap-3'>
             {mySkills.map((skill) => (
-              <Tag title={skill} />
+              <Tag title={skill} key={skill} />
             ))}
           </div>
         </div>

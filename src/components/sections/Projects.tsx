@@ -5,6 +5,7 @@ const Projects = () => {
     <Section
       title='Projects'
       description='Here you will find some of the personal and clients projects that I created with each project containing its own case study'
+      id='projects'
     >
       This is a child
     </Section>
