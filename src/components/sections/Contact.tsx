@@ -1,7 +1,6 @@
 import classes from './Contact.module.css';
 
 import Section from '../layout/Section';
-import Button from '../ui/Button';
 
 const Contact = () => {
   return (
@@ -31,7 +30,7 @@ const Contact = () => {
           <textarea className={classes.input} placeholder='Enter Your Message' name='message' rows={10} />
         </div>
         <div className='text-right'>
-          <Button title='Submit' type='button' />
+          <button type='submit'>Submit</button>
         </div>
       </form>
     </Section>
