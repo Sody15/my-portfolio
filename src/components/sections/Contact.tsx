@@ -8,7 +8,7 @@ const Contact = () => {
       title='Contact'
       description='Feel free to Contact me by submitting the form below and I will get back to you as soon as possible'
       id='contact'
-      className='bg-slate-200'
+      className='bg-slate-200 max-w-full'
     >
       <form className={classes.form}>
         <div>

@@ -8,7 +8,7 @@ const Section: FC<{ title: string; description: string; children?: ReactNode; id
   className,
 }) => {
   const classNames = useMemo(
-    () => (className ? `px-5 sm:px-12 py-28 ${className}` : 'px-5 sm:px-12 py-28'),
+    () => (className ? `px-5 sm:px-12 py-28 max-w-7xl m-auto ${className}` : 'px-5 sm:px-12 py-28 max-w-7xl m-auto'),
     [className]
   );
 
