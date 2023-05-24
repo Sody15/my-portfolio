@@ -7,7 +7,10 @@ const Section: FC<{ title: string; description: string; children?: ReactNode; id
   id,
   className,
 }) => {
-  const classNames = useMemo(() => (className ? `px-12 py-28 ${className}` : 'px-12 py-28'), [className]);
+  const classNames = useMemo(
+    () => (className ? `px-5 sm:px-12 py-28 ${className}` : 'px-5 sm:px-12 py-28'),
+    [className]
+  );
 
   return (
     <section className={classNames} id={id}>

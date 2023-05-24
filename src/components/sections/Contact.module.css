@@ -3,9 +3,9 @@
 }
 
 .form {
-  @apply bg-white p-10 max-w-2xl m-auto flex flex-col gap-6;
+  @apply bg-white py-10 px-5 sm:px-10 max-w-2xl m-auto flex flex-col gap-6;
 }
 
 .input {
-  @apply !px-4 !py-3 rounded-sm bg-gray-200 w-full;
+  @apply !px-4 !py-3 rounded-sm bg-gray-200 w-full outline-none;
 }
