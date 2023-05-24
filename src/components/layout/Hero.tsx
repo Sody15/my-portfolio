@@ -23,7 +23,7 @@ const Hero = () => {
             Github
           </div>
         </a>
-        <a href='src/assets/Resume-PaulSoderberg.pdf' target='_blank'>
+        <a href='./Resume-PaulSoderberg.pdf' target='_blank'>
           <div className='flex flex-col items-center hover:bg-yellow-100 transition-colors p-3 rounded-md'>
             <HiIdentification size={30} />
             Résumé
