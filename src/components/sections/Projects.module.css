@@ -1,0 +1,16 @@
+.img-todo {
+  width: 20rem;
+  height: 40rem;
+  background-image: url('../../assets/todo-mobile.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+@media (min-width: 768px) {
+  .img-todo {
+    width: 50rem;
+    height: 32rem;
+    background-image: url('../../assets/todo-desktop.png');
+    background-size: 100% auto;
+  }
+}
