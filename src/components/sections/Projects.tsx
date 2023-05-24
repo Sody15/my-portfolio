@@ -16,7 +16,7 @@ const Projects = () => {
         </div>
         <div className='project__desc flex flex-col items-center md:items-start'>
           <h3>Todo</h3>
-          <p className='py-6'>
+          <p className='py-6 text-center md:text-left'>
             Todo is a simple todo application to keep track of your weekly tasks. It's a complete full-stack application
             with authentication and a database.
           </p>

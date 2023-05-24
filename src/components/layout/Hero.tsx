@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id='home'
-      className='bg-slate-200 py-24 md:py-0 md:h-[80vh] flex justify-center items-center relative mt-24'
+      className='bg-slate-200 py-24 md:py-0 md:h-[80vh] flex justify-center items-center relative mt-24 px-5 sm:px-12'
     >
       <div className='hero__main flex flex-col items-center gap-10 text-center'>
         <h1>Hey, I'm Paul Soderberg</h1>

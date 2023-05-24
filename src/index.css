@@ -4,11 +4,11 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  @apply font-normal max-w-[120rem] m-auto;
+  @apply font-normal max-w-[120rem] m-auto text-base;
 }
 
 h1 {
-  @apply text-6xl font-extrabold uppercase tracking-wide;
+  @apply text-4xl md:text-6xl font-extrabold uppercase tracking-wide;
 }
 
 h2 {
