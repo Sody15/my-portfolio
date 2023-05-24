@@ -23,7 +23,6 @@ p {
   @apply text-lg tracking-wide;
 }
 
-button,
 .btn {
   @apply !bg-yellow-300 uppercase px-10 py-3 rounded-md tracking-wider font-semibold text-lg hover:scale-105 transition-transform shadow-md;
 }

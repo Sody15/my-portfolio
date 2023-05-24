@@ -30,7 +30,9 @@ const Contact = () => {
           <textarea className={classes.input} placeholder='Enter Your Message' name='message' rows={10} />
         </div>
         <div className='text-right'>
-          <button type='submit'>Submit</button>
+          <button className='btn' type='submit'>
+            Submit
+          </button>
         </div>
       </form>
     </Section>
