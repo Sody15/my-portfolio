@@ -20,13 +20,13 @@ const Hero = () => {
       {/* Side Nav */}
       <div className='absolute left-0 flex-col bg-white rounded-sm shadow-sm items-center hidden md:flex'>
         <a href='https://github.com/Sody15' target='_blank'>
-          <div className='flex flex-col items-center hover:bg-yellow-100 transition-colors p-3 rounded-md w-20'>
+          <div className='flex flex-col items-center hover:bg-primary transition-colors p-3 rounded-md w-20'>
             <AiFillGithub size={30} />
             Github
           </div>
         </a>
         <a href='./Resume-PaulSoderberg.pdf' target='_blank'>
-          <div className='flex flex-col items-center hover:bg-yellow-100 transition-colors p-3 rounded-md w-20'>
+          <div className='flex flex-col items-center hover:bg-primary transition-colors p-3 rounded-md w-20'>
             <HiIdentification size={30} />
             Résumé
           </div>

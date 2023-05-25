@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className='flex uppercase font-semibold text-lg justify-between px-5 lg:px-12 py-3 md:py-6 fixed w-full z-50 bg-white shadow-sm top-0'>
       <div className='header__logo flex items-center gap-4'>
-        <span className='header__logo-icon h-12 w-12 bg-yellow-300 inline-block rounded-full'></span>
+        <span className='header__logo-icon h-12 w-12 bg-primary inline-block rounded-full'></span>
         <span className='header__logo-name'>Paul Soderberg</span>
       </div>
 
@@ -33,7 +33,7 @@ const Header = () => {
             </ul>
           )}
         </span>
-        <ul className='hidden sm:block'>
+        <ul className='hidden sm:block whitespace-nowrap'>
           <NavItem title='Home' />
           <NavItem title='About' />
           <NavItem title='Projects' />
@@ -47,14 +47,12 @@ const Header = () => {
 const NavItem = ({ title, handleClick }: { title: string; handleClick?: () => void }) => {
   const onSelect = () => {
     document.getElementById(title.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
-    if (handleClick) {
-      handleClick();
-    }
+    handleClick ? handleClick() : null;
   };
 
   return (
     <li
-      className='px-6 hover:text-yellow-300 cursor-pointer transition-colors inline-block tracking-wide text-base'
+      className='px-6 hover:text-primary cursor-pointer transition-colors inline-block tracking-wide text-base'
       onClick={onSelect}
     >
       {title}
