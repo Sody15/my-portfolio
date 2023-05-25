@@ -26,7 +26,10 @@ const Header = () => {
           </button>
 
           {isMenuOpen && (
-            <ul className='flex flex-col items-center absolute right-0 gap-7 bg-white p-4 shadow-md' ref={menuRef}>
+            <ul
+              className='flex flex-col items-center absolute -right-5 gap-7 bg-white p-4 shadow-md px-10 pt-8'
+              ref={menuRef}
+            >
               <NavItem title='Home' handleClick={closeMenu} />
               <NavItem title='About' handleClick={closeMenu} />
               <NavItem title='Projects' handleClick={closeMenu} />
@@ -36,7 +39,7 @@ const Header = () => {
         </span>
 
         {/* Desktop */}
-        <ul className='hidden sm:block'>
+        <ul className='hidden sm:flex gap-10'>
           <NavItem title='Home' />
           <NavItem title='About' />
           <NavItem title='Projects' />
@@ -55,7 +58,7 @@ const NavItem = ({ title, handleClick }: { title: string; handleClick?: () => vo
 
   return (
     <li
-      className='px-6 hover:text-primary cursor-pointer transition-colors inline-block tracking-wide text-base'
+      className='hover:text-primary cursor-pointer transition-colors inline-block tracking-wide text-base'
       onClick={onSelect}
     >
       {title}
