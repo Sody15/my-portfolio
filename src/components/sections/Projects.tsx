@@ -29,13 +29,11 @@ const Projects = () => {
 
 const Project: FC<{ title: string; description: string; link: string }> = ({ title, description, link }) => {
   return (
-    <div className='project flex flex-col md:grid grid-cols-2 gap-10 items-center'>
-      <div className='project__img'>
-        <img className={classes[`img-${title}`]} />
-      </div>
-      <div className='project__desc flex flex-col items-center md:items-start'>
+    <div className='project flex flex-col lg:grid grid-cols-[60%_auto] gap-10 items-center'>
+      <div className={classes[`img-${title}`]} />
+      <div className='project__desc flex flex-col items-center lg:items-start'>
         <h3 className='capitalize'>{title}</h3>
-        <p className='py-6 text-center md:text-left'>{description}</p>
+        <p className='py-6 text-center lg:text-left'>{description}</p>
         <div className='flex gap-3'>
           <button className='btn whitespace-nowrap' type='button'>
             Tech Used
