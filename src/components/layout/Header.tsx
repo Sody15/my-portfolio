@@ -12,13 +12,14 @@ const Header = () => {
   };
 
   return (
-    <header className='flex uppercase font-semibold text-lg justify-between px-5 lg:px-12 py-3 md:py-6 fixed w-full z-50 bg-white shadow-sm top-0'>
+    <header className='flex uppercase font-semibold text-lg justify-between px-5 lg:px-12 py-3 md:py-6 fixed z-50 bg-white shadow-sm top-0 max-w-[120rem] w-full whitespace-nowrap'>
       <div className='header__logo flex items-center gap-4'>
         <span className='header__logo-icon h-12 w-12 bg-primary inline-block rounded-full'></span>
         <span className='header__logo-name'>Paul Soderberg</span>
       </div>
 
       <nav className='my-auto'>
+        {/* Mobile */}
         <span className='sm:hidden cursor-pointer relative'>
           <button onClick={() => setIsMenuOpen((prevVal) => !prevVal)}>
             <RxHamburgerMenu size={30} />
@@ -33,7 +34,9 @@ const Header = () => {
             </ul>
           )}
         </span>
-        <ul className='hidden sm:block whitespace-nowrap'>
+
+        {/* Desktop */}
+        <ul className='hidden sm:block'>
           <NavItem title='Home' />
           <NavItem title='About' />
           <NavItem title='Projects' />

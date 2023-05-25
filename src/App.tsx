@@ -7,14 +7,14 @@ import Projects from './components/sections/Projects';
 
 function App() {
   return (
-    <>
+    <div className='container max-w-[120rem] relative'>
       <Header />
       <Hero />
       <About />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

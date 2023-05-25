@@ -50,8 +50,8 @@ const Hero = () => {
 
       {/* Side Nav */}
       <motion.div
-        initial={{ translateX: -100 }}
-        animate={{ translateX: 0 }}
+        initial={{ opacity: 0, translateX: -100 }}
+        animate={{ opacity: 1, translateX: 0 }}
         transition={{
           duration: 0.8,
           delay: 0.8,
