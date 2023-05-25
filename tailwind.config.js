@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-img': "url('/hero-min.jpg')",
+        'hero-img': "url('/hero.jpg')",
       },
       colors: {
         primary: '#10b981',

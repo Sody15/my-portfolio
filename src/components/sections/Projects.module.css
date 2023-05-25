@@ -1,35 +1,47 @@
 .img-todo {
   width: 20rem;
   height: 40rem;
-  background-image: url('../../assets/todo-mobile.png');
+  background-image: url('../../assets/todo-mobile.webp');
   background-repeat: no-repeat;
   background-size: cover;
+  @supports (background-image: url('../../assets/todo-mobile.webp')) {
+    background-image: url('../../assets/todo-mobile.webp');
+  }
 }
 
 @media (min-width: 1024px) {
   .img-todo {
     width: 100%;
     height: 30rem;
-    background-image: url('../../assets/todo-desktop.png');
+    background-image: url('../../assets/todo-desktop.jpg');
     background-size: cover;
     background-position: center;
+    @supports (background-image: url('../../assets/todo-desktop.webp')) {
+      background-image: url('../../assets/todo-desktop.webp');
+    }
   }
 }
 
 .img-ecommerce {
   width: 20rem;
   height: 36rem;
-  background-image: url('../../assets/ecommerce-mobile.png');
+  background-image: url('../../assets/ecommerce-mobile.webp');
   background-repeat: no-repeat;
   background-size: 100% auto;
+  @supports (background-image: url('../../assets/ecommerce-mobile.webp')) {
+    background-image: url('../../assets/ecommerce-mobile.webp');
+  }
 }
 
 @media (min-width: 1024px) {
   .img-ecommerce {
     width: 100%;
     height: 30rem;
-    background-image: url('../../assets/ecommerce-desktop.png');
+    background-image: url('../../assets/ecommerce-desktop.webp');
     background-size: cover;
     background-position: center;
+    @supports (background-image: url('../../assets/ecommerce-desktop.webp')) {
+      background-image: url('../../assets/ecommerce-desktop.webp');
+    }
   }
 }
