@@ -9,7 +9,7 @@ const Projects = () => {
       title='Projects'
       description='Here you will find some of the personal and clients projects that I created with each project containing its own case study'
       id='projects'
-      className='flex flex-col'
+      className='flex flex-col gap-10'
     >
       <Project
         title='todo'

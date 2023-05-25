@@ -14,3 +14,20 @@
     background-size: 100% auto;
   }
 }
+
+.img-ecommerce {
+  width: 20rem;
+  height: 36rem;
+  background-image: url('../../assets/ecommerce-mobile.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+@media (min-width: 768px) {
+  .img-ecommerce {
+    width: 50rem;
+    height: 32rem;
+    background-image: url('../../assets/ecommerce-desktop.png');
+    background-size: 100% auto;
+  }
+}
