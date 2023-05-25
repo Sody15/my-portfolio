@@ -43,7 +43,7 @@ const Hero = () => {
             I'm Paul Soderberg
           </motion.h1>
         </div>
-        <p className='max-w-xl'>
+        <p className='max-w-xl bg-stone-700'>
           I'm a Front-End Web Developer looking for a new and exciting opportunity. I love to build beautiful fast
           applications.
         </p>
