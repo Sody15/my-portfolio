@@ -26,7 +26,7 @@ const Hero = () => {
               duration: 0.5,
               ease: 'easeOut',
             }}
-            className='inline-block'
+            className='inline-block bg-[#558A74]/[.7]'
           >
             Hey,&nbsp;
           </motion.h1>
@@ -38,12 +38,12 @@ const Hero = () => {
               duration: 0.5,
               ease: 'easeOut',
             }}
-            className='inline-block'
+            className='inline-block bg-[#558A74]/[.7]'
           >
             I'm Paul Soderberg
           </motion.h1>
         </div>
-        <p className='max-w-xl bg-stone-700'>
+        <p className='max-w-xl bg-[#395043]/[.7]'>
           I'm a Front-End Web Developer looking for a new and exciting opportunity. I love to build beautiful fast
           applications.
         </p>

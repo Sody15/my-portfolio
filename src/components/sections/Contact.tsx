@@ -1,8 +1,14 @@
 import classes from './Contact.module.css';
 
 import Section from '../layout/Section';
+import { FormEvent } from 'react';
 
 const Contact = () => {
+  const submitForm = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('called');
+  };
+
   return (
     <Section
       title='Contact'
@@ -10,7 +16,7 @@ const Contact = () => {
       id='contact'
       className='bg-slate-200 max-w-full'
     >
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={submitForm}>
         <div>
           <label className={classes.label} htmlFor='name'>
             Name
