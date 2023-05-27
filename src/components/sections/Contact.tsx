@@ -1,12 +1,24 @@
 import classes from './Contact.module.css';
 
 import Section from '../layout/Section';
-import { FormEvent } from 'react';
+import { FormEvent, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+
   const submitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('called');
+
+    emailjs.sendForm('service_2yto9gl', 'template_9tpabmi', form.current, 'flI8Hu3OYVqrDYBUl').then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -16,18 +28,18 @@ const Contact = () => {
       id='contact'
       className='bg-slate-200 max-w-full'
     >
-      <form className={classes.form} onSubmit={submitForm}>
+      <form className={classes.form} onSubmit={submitForm} ref={form}>
         <div>
-          <label className={classes.label} htmlFor='name'>
+          <label className={classes.label} htmlFor='user_name'>
             Name
           </label>
-          <input className={classes.input} type='text' placeholder='Enter Your Name' name='name' />
+          <input className={classes.input} type='text' placeholder='Enter Your Name' name='user_name' />
         </div>
         <div>
-          <label className={classes.label} htmlFor='email'>
+          <label className={classes.label} htmlFor='user_email'>
             Email
           </label>
-          <input className={classes.input} type='text' placeholder='Enter Your Email' name='email' />
+          <input className={classes.input} type='text' placeholder='Enter Your Email' name='user_email' />
         </div>
         <div>
           <label className={classes.label} htmlFor='message'>
