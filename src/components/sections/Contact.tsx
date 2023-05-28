@@ -60,7 +60,7 @@ const Contact = () => {
           }}
         >
           <div className='flex flex-col items-center gap-5'>
-            <span className='flex gap-3 items-center'>
+            <span className='flex gap-2 items-center'>
               <h3>Thanks!</h3>
               <motion.h3
                 initial={{ opacity: 0, translateY: '-50%' }}
