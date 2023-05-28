@@ -1,19 +1,19 @@
-import classes from './Contact.module.css';
-
-import Section from '../layout/Section';
 import { FormEvent, useRef, useState } from 'react';
+
+import classes from './Contact.module.css';
+import Section from '../layout/Section';
+
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-
 import { BsEmojiSmile } from 'react-icons/bs';
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setIsSubmitted(true);
 
     try {
       await emailjs.sendForm(
@@ -28,8 +28,6 @@ const Contact = () => {
 
     // const timer = new Promise((resolve) => setTimeout(resolve, 2000));
     // await timer;
-
-    setIsSubmitting(false);
   };
 
   return (
@@ -44,7 +42,7 @@ const Contact = () => {
         <motion.div
           className='form-bg w-6 h-6 bg-primary absolute bottom-0 right-0 rounded-full z-30 hidden'
           initial={false}
-          animate={isSubmitting ? { scale: 100, display: 'block' } : { scale: 0 }}
+          animate={isSubmitted ? { scale: 100, display: 'block' } : { scale: 0 }}
           transition={{
             duration: 0.5,
             ease: 'easeIn',
@@ -54,7 +52,7 @@ const Contact = () => {
         {/* Submit Text Animation */}
         <motion.div
           className='w-full h-full bg-primary absolute top-0 left-0  z-30 overflow-hidden justify-center items-center text-white hidden'
-          animate={isSubmitting ? { opacity: 1, display: 'flex' } : { opacity: 0, display: 'none' }}
+          animate={isSubmitted ? { opacity: 1, display: 'flex' } : { opacity: 0, display: 'none' }}
           transition={{
             delay: 0.5,
             duration: 0.5,
@@ -66,7 +64,7 @@ const Contact = () => {
               <h3>Thanks!</h3>
               <motion.h3
                 initial={{ opacity: 0, translateY: '-50%' }}
-                animate={!isSubmitting ? { opacity: 0, translateY: -100 } : { opacity: 100, translateY: 0 }}
+                animate={!isSubmitted ? { opacity: 0, translateY: -100 } : { opacity: 100, translateY: 0 }}
                 transition={{
                   delay: 1,
                   duration: 0.5,
@@ -80,7 +78,7 @@ const Contact = () => {
 
             <motion.p
               initial={{ opacity: 0 }}
-              animate={!isSubmitting ? { opacity: 0 } : { opacity: 1 }}
+              animate={!isSubmitted ? { opacity: 0 } : { opacity: 1 }}
               transition={{
                 delay: 1.5,
                 duration: 0.5,
