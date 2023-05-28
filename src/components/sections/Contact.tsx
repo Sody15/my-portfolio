@@ -97,19 +97,19 @@ const Contact = () => {
           <label className={classes.label} htmlFor='user_name'>
             Name
           </label>
-          <input className={classes.input} type='text' placeholder='Enter Your Name' name='user_name' />
+          <input className={classes.input} type='text' required placeholder='Enter Your Name' name='user_name' />
         </div>
         <div>
           <label className={classes.label} htmlFor='user_email'>
             Email
           </label>
-          <input className={classes.input} type='text' placeholder='Enter Your Email' name='user_email' />
+          <input className={classes.input} type='text' required placeholder='Enter Your Email' name='user_email' />
         </div>
         <div>
           <label className={classes.label} htmlFor='message'>
             Message
           </label>
-          <textarea className={classes.input} placeholder='Enter Your Message' name='message' rows={10} />
+          <textarea className={classes.input} required placeholder='Enter Your Message' name='message' rows={10} />
         </div>
         <div className='text-right'>
           <button className='btn' type='submit'>
