@@ -26,7 +26,7 @@ const Hero = () => {
               duration: 0.5,
               ease: 'easeOut',
             }}
-            className='inline-block bg-[#558A74]/[.7]'
+            className='inline-block'
           >
             Hey,&nbsp;
           </motion.h1>
@@ -38,7 +38,7 @@ const Hero = () => {
               duration: 0.5,
               ease: 'easeOut',
             }}
-            className='inline-block bg-[#558A74]/[.7]'
+            className='inline-block'
           >
             I'm Paul Soderberg
           </motion.h1>
