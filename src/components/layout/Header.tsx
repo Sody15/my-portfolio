@@ -55,10 +55,10 @@ const Header = () => {
           {isMenuOpen && (
             <motion.div
               className='bg-white w-full h-full fixed left-0 top-0 text-5xl flex justify-center items-center -z-40'
-              initial={{ height: 0 }}
-              animate={{ height: '100%' }}
+              initial={{ height: 0, clipPath: 'inset(0 0 0 100%)' }}
+              animate={{ height: '100%', clipPath: 'inset(0 0 0 0)' }}
               transition={{
-                duration: 0.5,
+                duration: 0.3,
                 ease: 'easeOut',
               }}
             >
