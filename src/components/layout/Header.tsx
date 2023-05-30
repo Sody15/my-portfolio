@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import useClickOutside from '../../hooks/useClickOutside';
 import { scrollIntoView } from '../../utils/scrollTo';
@@ -15,6 +15,15 @@ const Header = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Disable scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
 
   return (
     <header className='fixed uppercase font-semibold z-50'>
