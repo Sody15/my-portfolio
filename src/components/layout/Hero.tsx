@@ -66,7 +66,7 @@ const SideNav = () => {
         delay: 0.8,
         ease: 'backInOut',
       }}
-      className='absolute left-0 flex-col bg-white rounded-r-md items-end hidden md:flex w-32 z-50'
+      className='absolute left-0 flex-col bg-white rounded-r-md items-end hidden md:flex w-32 z-40'
     >
       <a href='https://github.com/Sody15' target='_blank'>
         <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-r-md w-20'>
