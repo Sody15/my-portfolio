@@ -3,7 +3,7 @@
 }
 
 .form {
-  @apply bg-white py-10 px-5 sm:px-10 max-w-3xl m-auto flex flex-col gap-6 relative overflow-hidden;
+  @apply bg-white p-10 max-w-3xl -m-6 md:m-auto flex flex-col gap-6 relative overflow-hidden;
 }
 
 .input {
