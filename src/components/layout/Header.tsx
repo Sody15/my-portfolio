@@ -35,13 +35,6 @@ const Header = () => {
         </nav>
 
         {/* Mobile */}
-        {/* <button
-          onClick={() => setIsMenuOpen((prevVal) => !prevVal)}
-          className='md:hidden hover:text-primary transition-colors'
-        >
-          {isMenuOpen && <IoMdClose size={30} />}
-          {!isMenuOpen && <RxHamburgerMenu size={30} />}
-        </button> */}
         <motion.button
           onClick={() => setIsMenuOpen((prevVal) => !prevVal)}
           className='md:hidden hover:text-primary transition-colors'
