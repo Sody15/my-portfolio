@@ -2,10 +2,11 @@ import { AiFillGithub } from 'react-icons/ai';
 import { HiIdentification } from 'react-icons/hi';
 
 import { motion } from 'framer-motion';
+import { scrollIntoView } from '../../utils/scrollTo';
 
 const Hero = () => {
   const onProjectsClick = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    scrollIntoView('projects');
   };
 
   return (

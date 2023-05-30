@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import useClickOutside from '../../hooks/useClickOutside';
+import { scrollIntoView } from '../../utils/scrollTo';
 
 const Header = () => {
   const menuRef = useRef<HTMLUListElement>(null);
@@ -52,7 +53,8 @@ const Header = () => {
 
 const NavItem = ({ title, handleClick }: { title: string; handleClick?: () => void }) => {
   const onSelect = () => {
-    document.getElementById(title.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+    scrollIntoView(title.toLowerCase());
+
     handleClick ? handleClick() : null;
   };
 
