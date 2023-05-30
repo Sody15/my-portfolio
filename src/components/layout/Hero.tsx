@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import { scrollIntoView } from '../../utils/scrollTo';
 
 const Hero = () => {
-  const onProjectsClick = () => {
-    scrollIntoView('projects');
-  };
+  const onProjectsClick = () => scrollIntoView('projects');
 
   return (
     <section
