@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import useClickOutside from '../../hooks/useClickOutside';
 import { scrollIntoView } from '../../utils/scrollTo';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
@@ -52,24 +52,27 @@ const Header = () => {
       {/* Mobile Menu */}
       <nav className='md:hidden'>
         <span className='cursor-pointer relative'>
-          {isMenuOpen && (
-            <motion.div
-              className='bg-white w-full h-full fixed left-0 top-0 text-5xl flex justify-center items-center -z-40'
-              initial={{ height: 0, clipPath: 'inset(0 0 0 100%)' }}
-              animate={{ height: '100%', clipPath: 'inset(0 0 0 0)' }}
-              transition={{
-                duration: 0.3,
-                ease: 'easeOut',
-              }}
-            >
-              <ul className='flex flex-col items-center gap-7'>
-                <NavItem title='Home' handleClick={closeMenu} />
-                <NavItem title='About' handleClick={closeMenu} />
-                <NavItem title='Projects' handleClick={closeMenu} />
-                <NavItem title='Contact' handleClick={closeMenu} />
-              </ul>
-            </motion.div>
-          )}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className='bg-white w-full h-full fixed left-0 top-0 text-5xl flex justify-center items-center -z-40'
+                initial={{ clipPath: 'inset(0 0 0 100%)' }}
+                animate={{ clipPath: 'inset(0 0 0 0)' }}
+                exit={{ clipPath: 'inset(0 0 0 100%)' }}
+                transition={{
+                  duration: 0.3,
+                  ease: 'easeOut',
+                }}
+              >
+                <ul className='flex flex-col items-center gap-7'>
+                  <NavItem title='Home' handleClick={closeMenu} />
+                  <NavItem title='About' handleClick={closeMenu} />
+                  <NavItem title='Projects' handleClick={closeMenu} />
+                  <NavItem title='Contact' handleClick={closeMenu} />
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </span>
       </nav>
     </header>

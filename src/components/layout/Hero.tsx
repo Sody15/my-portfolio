@@ -58,7 +58,7 @@ const Hero = () => {
 const SideNav = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, translateX: -100 }}
+      initial={{ opacity: 0, translateX: -130 }}
       animate={{ opacity: [0, 1, 1], translateX: -48 }}
       transition={{
         duration: 1,
