@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header className='fixed uppercase font-semibold z-50'>
-      <div className='text-lg fixed flex justify-between z-50 px-5 lg:px-12 py-3 md:py-6 bg-white md:shadow-sm top-0 max-w-[120rem] w-full whitespace-nowrap'>
+      <div className='text-lg fixed flex justify-between z-50 px-5 lg:px-12 py-3 bg-white md:shadow-sm top-0 max-w-[120rem] w-full whitespace-nowrap'>
         <div className='header__logo flex items-center gap-4'>
           <span className='header__logo-icon h-12 w-12 bg-primary inline-block rounded-full'></span>
           <span className='header__logo-name'>Paul Soderberg</span>
@@ -64,12 +64,12 @@ const Header = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                className='bg-white w-full h-full fixed left-0 top-0 text-5xl flex justify-center items-center -z-40'
+                className='bg-white w-full h-full fixed left-0 top-0 text-4xl flex justify-center items-center -z-40'
                 initial={{ clipPath: 'inset(0 0 0 100%)' }}
                 animate={{ clipPath: 'inset(0 0 0 0)' }}
                 exit={{ clipPath: 'inset(0 0 0 100%)' }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.2,
                   ease: 'easeOut',
                 }}
               >

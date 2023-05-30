@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section
       id='home'
-      className=' py-24 md:py-0 md:h-[80vh] flex justify-center items-center relative mt-16 md:mt-24 px-5 sm:px-12 bg-cover bg-hero-img'
+      className=' py-24 md:py-0 md:h-[80vh] flex justify-center items-center relative mt-16 px-5 sm:px-12 bg-cover bg-hero-img'
     >
       {/* Background Overlay */}
       <div className='w-full h-full absolute bg-primary/[.3] z-10'></div>
