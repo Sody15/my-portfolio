@@ -53,7 +53,7 @@ const Header = () => {
             ease: 'easeIn',
           }}
         >
-          {isMenuOpen && <IoMdClose size={35} />}
+          {isMenuOpen && <IoMdClose size={30} />}
           {!isMenuOpen && <RxHamburgerMenu size={30} />}
         </motion.button>
       </div>
