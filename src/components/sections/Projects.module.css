@@ -1,7 +1,7 @@
 .img-todo {
   width: 20rem;
   height: 40rem;
-  background-image: url('../../assets/todo-mobile.webp');
+  background-image: url('../../assets/todo-mobile.png');
   background-repeat: no-repeat;
   background-size: cover;
   @supports (background-image: url('../../assets/todo-mobile.webp')) {
@@ -13,9 +13,9 @@
   .img-todo {
     width: 100%;
     height: 30rem;
-    background-image: url('../../assets/todo-desktop.jpg');
+    background-image: url('../../assets/todo-desktop.png');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     @supports (background-image: url('../../assets/todo-desktop.webp')) {
       background-image: url('../../assets/todo-desktop.webp');
     }
@@ -25,7 +25,7 @@
 .img-ecommerce {
   width: 20rem;
   height: 36rem;
-  background-image: url('../../assets/ecommerce-mobile.webp');
+  background-image: url('../../assets/ecommerce-mobile.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   @supports (background-image: url('../../assets/ecommerce-mobile.webp')) {
@@ -37,9 +37,9 @@
   .img-ecommerce {
     width: 100%;
     height: 30rem;
-    background-image: url('../../assets/ecommerce-desktop.webp');
+    background-image: url('../../assets/ecommerce-desktop.png');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     @supports (background-image: url('../../assets/ecommerce-desktop.webp')) {
       background-image: url('../../assets/ecommerce-desktop.webp');
     }
