@@ -31,7 +31,10 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         }}
         className='popup hidden md:block m-auto bg-white shadow-md rounded-lg w-full min-h-[50vh] md:w-1/2 md:h-1/2 top-1/2 left-1/2 z-50 max-w-xl fixed p-10 border-8 border-primary'
       >
-        <ProjectDetailsContainer projectDetails={projectDetails} onClose={onClose} />
+        <button onClick={onClose} className='absolute top-3 right-3'>
+          <IoMdClose size={30} />
+        </button>
+        <ProjectDetailsContainer projectDetails={projectDetails} />
       </motion.div>
 
       {/* Mobile */}
@@ -43,23 +46,24 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup-mobile md:hidden fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-xl p-10 pb-16'
+        className='popup-mobile md:hidden fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-xl px-10 pb-16'
       >
-        <ProjectDetailsContainer projectDetails={projectDetails} onClose={onClose} />
+        <div className='flex justify-center items-center text-primary mt-10 mb-5'>
+          <button
+            onClick={onClose}
+            type='button'
+            className='relative after:content-[""] after:block after:absolute after:top-0 after:-left-[12px] after:w-4 after:h-1 after:bg-primary after:rotate-[30deg] before:content-[""] before:block before:w-4 before:h-1 before:bg-primary before:rotate-[-30deg]'
+          />
+        </div>
+        <ProjectDetailsContainer projectDetails={projectDetails} />
       </motion.div>
     </>
   );
 };
 
-const ProjectDetailsContainer: FC<{ projectDetails: ProjectDetails; onClose: () => void }> = ({
-  projectDetails,
-  onClose,
-}) => {
+const ProjectDetailsContainer: FC<{ projectDetails: ProjectDetails }> = ({ projectDetails }) => {
   return (
     <>
-      <button onClick={onClose} className='absolute top-3 right-3'>
-        <IoMdClose size={30} />
-      </button>
       <div className='tech-used mb-4'>
         <h3>Tech Used</h3>
         {projectDetails.techUsed.map((tech) => (
