@@ -6,8 +6,21 @@ import { AiFillGithub } from 'react-icons/ai';
 
 import { toggleScroll } from '../../utils/scroll';
 import ProjectDetails from '../../types/ProjectDetails';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> = ({ projectDetails, onClose }) => {
+  const isMd = useMediaQuery('md');
+
+  const variants = isMd
+    ? {
+        initial: { opacity: 0, scale: 0, translateX: '-50%', translateY: '-50%' },
+        animate: { opacity: 1, scale: 1, translateX: '-50%', translateY: '-50%' },
+      }
+    : {
+        initial: { translateY: '100%' },
+        animate: { translateY: '0%' },
+      };
+
   // Toggle Scroll
   useEffect(() => {
     toggleScroll(false);
@@ -20,62 +33,42 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
     <>
       <div className='popup-bg fixed top-0 left-0 w-full h-full z-40 bg-black/50' onClick={onClose} />
 
-      {/* Desktop */}
       <motion.div
-        initial={{ opacity: 0, scale: 0, translateX: '-50%', translateY: '-50%' }}
-        animate={{ opacity: 1, scale: 1, translateX: '-50%', translateY: '-50%' }}
-        exit={{ opacity: 0, scale: 0, translateX: '-50%', translateY: '-50%' }}
+        initial={variants.initial}
+        animate={variants.animate}
+        exit={variants.initial}
         transition={{
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup hidden md:block m-auto bg-white shadow-md rounded-lg w-full min-h-[50vh] md:w-1/2 md:h-1/2 top-1/2 left-1/2 z-50 max-w-xl fixed p-10 border-8 border-primary'
+        className='popup md:block bg-white shadow-md md:rounded-lg w-full min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10 md:border-8 border-primary fixed bottom-0 left-0 z-50 rounded-t-xl px-10 pb-16'
       >
-        <button onClick={onClose} className='absolute top-3 right-3'>
+        {/* Close Buttons */}
+        <button onClick={onClose} className='absolute top-3 right-3 hidden md:block'>
           <IoMdClose size={30} />
         </button>
-        <ProjectDetailsContainer projectDetails={projectDetails} />
-      </motion.div>
-
-      {/* Mobile */}
-      <motion.div
-        initial={{ translateY: '100%' }}
-        animate={{ translateY: '0%' }}
-        exit={{ translateY: '100%' }}
-        transition={{
-          duration: 0.2,
-          ease: 'easeIn',
-        }}
-        className='popup-mobile md:hidden fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-xl px-10 pb-16'
-      >
-        <div className='flex justify-center items-center text-primary mt-10 mb-5'>
+        <div className='md:hidden flex justify-center items-center text-primary my-5'>
           <button
             onClick={onClose}
             type='button'
-            className='relative after:content-[""] after:block after:absolute after:top-0 after:-left-[12px] after:w-4 after:h-1 after:bg-primary after:rotate-[30deg] before:content-[""] before:block before:w-4 before:h-1 before:bg-primary before:rotate-[-30deg]'
+            className='relative after:content-[""] after:block after:absolute after:top-3 after:left-[2px] after:w-4 after:h-1 after:bg-primary after:rotate-[30deg] before:content-[""] before:absolute before:right-[3px] before:block before:w-4 before:h-1 before:bg-primary before:-rotate-[30deg]  w-8 h-6'
           />
         </div>
-        <ProjectDetailsContainer projectDetails={projectDetails} />
-      </motion.div>
-    </>
-  );
-};
 
-const ProjectDetailsContainer: FC<{ projectDetails: ProjectDetails }> = ({ projectDetails }) => {
-  return (
-    <>
-      <div className='tech-used mb-4'>
-        <h3>Tech Used</h3>
-        {projectDetails.techUsed.map((tech) => (
-          <div key={tech}>{tech}</div>
-        ))}
-      </div>
-      <a href={projectDetails.githubLink} target='_blank' className='inline-block'>
-        <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-md w-20 border-2 border-primary'>
-          <AiFillGithub size={30} />
-          Github
+        {/* Content */}
+        <div className='tech-used mb-4'>
+          <h3>Tech Used</h3>
+          {projectDetails.techUsed.map((tech) => (
+            <div key={tech}>{tech}</div>
+          ))}
         </div>
-      </a>
+        <a href={projectDetails.githubLink} target='_blank' className='inline-block'>
+          <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-md w-20 border-2 border-primary'>
+            <AiFillGithub size={30} />
+            Github
+          </div>
+        </a>
+      </motion.div>
     </>
   );
 };
