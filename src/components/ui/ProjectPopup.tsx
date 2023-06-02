@@ -61,6 +61,7 @@ const ProjectDetailsContainer: FC<{ projectDetails: ProjectDetails; onClose: () 
         <IoMdClose size={30} />
       </button>
       <div className='tech-used mb-4'>
+        <h3>Tech Used</h3>
         {projectDetails.techUsed.map((tech) => (
           <div key={tech}>{tech}</div>
         ))}

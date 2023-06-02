@@ -89,7 +89,7 @@ const Project: FC<{
             Tech Used
           </button>
           <a className='btn whitespace-nowrap' target='_blank' href={link}>
-            Live Link
+            Project Link
           </a>
         </div>
       </div>
