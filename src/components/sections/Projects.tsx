@@ -8,6 +8,7 @@ import ProjectPopup from '../ui/ProjectPopup';
 import ProjectDetails from '../../types/ProjectDetails';
 
 import { AnimatePresence } from 'framer-motion';
+import { AiOutlineLink } from 'react-icons/ai';
 
 const Projects = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -88,8 +89,11 @@ const Project: FC<{
           <button className='btn whitespace-nowrap' type='button' onClick={() => onTechUsed(projectDetails)}>
             Tech Used
           </button>
-          <a className='btn whitespace-nowrap' target='_blank' href={link}>
-            Project Link
+          <a className='btn whitespace-nowrap relative' target='_blank' href={link}>
+            <span className='absolute left-5 top-4'>
+              <AiOutlineLink />
+            </span>
+            Link
           </a>
         </div>
       </div>
