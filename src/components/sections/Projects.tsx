@@ -5,11 +5,9 @@ import classes from './Projects.module.css';
 
 import Section from '../layout/Section';
 import ProjectPopup from '../ui/ProjectPopup';
+import ProjectDetails from '../../types/ProjectDetails';
 
-export type ProjectDetails = {
-  techUsed: string[];
-  githubLink: string;
-};
+import { AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -28,12 +26,14 @@ const Projects = () => {
       className='flex flex-col'
     >
       {/* Popup */}
-      {isPopupOpen &&
-        projectDetails &&
-        createPortal(
-          <ProjectPopup projectDetails={projectDetails} onClose={() => setIsPopupOpen(false)} />,
-          document.body
-        )}
+      {createPortal(
+        <AnimatePresence>
+          {isPopupOpen && projectDetails && (
+            <ProjectPopup projectDetails={projectDetails} onClose={() => setIsPopupOpen(false)} />
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
 
       <div className='flex flex-col gap-24'>
         <Project
