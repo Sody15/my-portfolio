@@ -43,7 +43,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup-mobile md:hidden fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-xl p-10 pb-28'
+        className='popup-mobile md:hidden fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-xl p-10 pb-16'
       >
         <ProjectDetailsContainer projectDetails={projectDetails} onClose={onClose} />
       </motion.div>
