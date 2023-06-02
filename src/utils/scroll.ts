@@ -10,3 +10,7 @@ export const scrollIntoView = (elName: string) => {
     });
   }
 };
+
+export const toggleScroll = (isScroll: boolean) => {
+  isScroll ? (document.body.style.overflow = 'auto') : (document.body.style.overflow = 'hidden');
+};

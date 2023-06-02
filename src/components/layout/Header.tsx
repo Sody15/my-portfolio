@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import useClickOutside from '../../hooks/useClickOutside';
-import { scrollIntoView } from '../../utils/scrollTo';
+import { scrollIntoView, toggleScroll } from '../../utils/scroll';
 import faceUrl from '../../assets/face.png';
 
 import { AnimatePresence, motion } from 'framer-motion';
@@ -19,11 +19,7 @@ const Header = () => {
 
   // Disable scroll when mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    isMenuOpen ? toggleScroll(false) : toggleScroll(true);
   }, [isMenuOpen]);
 
   return (

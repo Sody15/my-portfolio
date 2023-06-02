@@ -1,9 +1,25 @@
+import { FC, useState } from 'react';
+import { createPortal } from 'react-dom';
+
 import classes from './Projects.module.css';
 
 import Section from '../layout/Section';
-import { FC } from 'react';
+import ProjectPopup from '../ui/ProjectPopup';
+
+export type ProjectDetails = {
+  techUsed: string[];
+  githubLink: string;
+};
 
 const Projects = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [projectDetails, setProjectDetails] = useState<ProjectDetails>();
+
+  const openPopup = (projectDetails: ProjectDetails) => {
+    setIsPopupOpen(true);
+    setProjectDetails(projectDetails);
+  };
+
   return (
     <Section
       title='Projects'
@@ -11,25 +27,57 @@ const Projects = () => {
       id='projects'
       className='flex flex-col'
     >
+      {/* Popup */}
+      {isPopupOpen &&
+        projectDetails &&
+        createPortal(
+          <ProjectPopup projectDetails={projectDetails} onClose={() => setIsPopupOpen(false)} />,
+          document.body
+        )}
+
       <div className='flex flex-col gap-24'>
         <Project
           title='todo'
           description='Todo is a simple todo application to keep track of your weekly tasks. It&#39;s a complete full-stack application
             with authentication and a database.'
           link='https://www.todo.paulsoderberg.com'
+          projectDetails={{
+            techUsed: [
+              'React',
+              'Next.js',
+              'Next API Routes',
+              'Tanstack Query',
+              'MongoDb',
+              'NextAuth.js',
+              'Tailwind CSS',
+            ],
+            githubLink: 'https://github.com/Sody15/todo-app',
+          }}
+          onTechUsed={openPopup}
         />
         <Project
           title='ecommerce'
           description='Ecommerce is a simple ecommerce application that lets you add and remove items from your shopping cart. I
         used redux to demonstrate I know it.'
-          link='https://www.todo.paulsoderberg.com'
+          link='https://www.ecommerce.paulsoderberg.com'
+          projectDetails={{
+            techUsed: ['React'],
+            githubLink: 'https://github.com/Sody15/ecommerce-app',
+          }}
+          onTechUsed={openPopup}
         />
       </div>
     </Section>
   );
 };
 
-const Project: FC<{ title: string; description: string; link: string }> = ({ title, description, link }) => {
+const Project: FC<{
+  title: string;
+  description: string;
+  link: string;
+  projectDetails: ProjectDetails;
+  onTechUsed: (techUsed: ProjectDetails) => void;
+}> = ({ title, description, link, projectDetails, onTechUsed }) => {
   return (
     <div className='project flex flex-col lg:grid grid-cols-[60%_auto] gap-10 items-center'>
       <div className={classes[`img-${title}`]} />
@@ -37,7 +85,7 @@ const Project: FC<{ title: string; description: string; link: string }> = ({ tit
         <h3 className='capitalize'>{title}</h3>
         <p className='py-6 text-center lg:text-left'>{description}</p>
         <div className='flex gap-3'>
-          <button className='btn whitespace-nowrap' type='button'>
+          <button className='btn whitespace-nowrap' type='button' onClick={() => onTechUsed(projectDetails)}>
             Tech Used
           </button>
           <a className='btn whitespace-nowrap' target='_blank' href={link}>

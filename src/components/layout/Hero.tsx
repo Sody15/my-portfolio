@@ -2,7 +2,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { HiIdentification } from 'react-icons/hi';
 
 import { motion } from 'framer-motion';
-import { scrollIntoView } from '../../utils/scrollTo';
+import { scrollIntoView } from '../../utils/scroll';
 
 const Hero = () => {
   const onProjectsClick = () => scrollIntoView('projects');
