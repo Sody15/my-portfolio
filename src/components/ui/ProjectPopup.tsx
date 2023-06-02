@@ -9,9 +9,9 @@ import ProjectDetails from '../../types/ProjectDetails';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
 const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> = ({ projectDetails, onClose }) => {
-  const isMd = useMediaQuery('md');
+  const isMediaQuery_Md = useMediaQuery('md');
 
-  const variants = isMd
+  const variants = isMediaQuery_Md
     ? {
         initial: { opacity: 0, scale: 0, translateX: '-50%', translateY: '-50%' },
         animate: { opacity: 1, scale: 1, translateX: '-50%', translateY: '-50%' },
@@ -30,7 +30,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
   }, []);
 
   return (
-    <>
+    <div className='popup-container'>
       <div className='popup-bg fixed top-0 left-0 w-full h-full z-40 bg-black/50' onClick={onClose} />
 
       <motion.div
@@ -41,7 +41,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup md:block bg-white shadow-md md:rounded-lg w-full min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10 md:border-8 border-primary fixed bottom-0 left-0 z-50 rounded-t-xl px-10 pb-16'
+        className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-50 rounded-t-xl px-10 pb-16 md:block md:rounded-lg md:min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10'
       >
         {/* Close Buttons */}
         <button onClick={onClose} className='absolute top-3 right-3 hidden md:block'>
@@ -69,7 +69,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           </div>
         </a>
       </motion.div>
-    </>
+    </div>
   );
 };
 
