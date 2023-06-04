@@ -31,7 +31,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
 
   return (
     <div className='popup-container'>
-      <div className='popup-bg fixed top-0 left-0 w-full h-full z-40 bg-black/50' onClick={onClose} />
+      <div className='popup-bg fixed top-0 left-0 w-full h-full z-30 bg-black/50' onClick={onClose} />
 
       <motion.div
         initial={variants.initial}
@@ -41,7 +41,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-50 rounded-t-xl px-10 pb-16 md:block md:rounded-lg md:min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10'
+        className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-40 rounded-t-xl px-10 pb-16 md:block md:rounded-lg md:min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10'
       >
         {/* Close Buttons */}
         <button onClick={onClose} className='absolute top-4 right-4 hidden md:block'>
