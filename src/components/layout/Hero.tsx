@@ -42,7 +42,7 @@ const Hero = () => {
             I'm Paul Soderberg
           </motion.h1>
         </div>
-        <p className='max-w-xl bg-[#395043]/[.7]'>
+        <p className='text-xl max-w-xl bg-[#395043]/[.7] py-2'>
           I'm a Front-End Web Developer looking for a new and exciting opportunity. I love to build beautiful fast
           applications.
         </p>
