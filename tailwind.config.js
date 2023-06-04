@@ -7,7 +7,7 @@ export default {
         'hero-img': "url('/hero.jpg')",
       },
       colors: {
-        primary: '#10b981',
+        primary: '#0D875E',
       },
     },
   },
