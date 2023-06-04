@@ -76,7 +76,7 @@ const SideNav = () => {
       <a href='./Resume-PaulSoderberg.pdf' target='_blank'>
         <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-br-md w-20'>
           <HiIdentification size={30} />
-          Résumé
+          Resume
         </div>
       </a>
     </motion.div>
