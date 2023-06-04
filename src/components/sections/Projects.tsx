@@ -90,7 +90,7 @@ const Project: FC<{
             Tech Used
           </button>
           <a className='btn whitespace-nowrap relative' target='_blank' href={link}>
-            <span className='absolute left-5 top-4'>
+            <span className='absolute left-5 top-[1.07rem]'>
               <AiOutlineLink />
             </span>
             Link

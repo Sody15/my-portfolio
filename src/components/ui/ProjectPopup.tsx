@@ -44,7 +44,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-50 rounded-t-xl px-10 pb-16 md:block md:rounded-lg md:min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10'
       >
         {/* Close Buttons */}
-        <button onClick={onClose} className='absolute top-3 right-3 hidden md:block'>
+        <button onClick={onClose} className='absolute top-4 right-4 hidden md:block'>
           <IoMdClose size={30} />
         </button>
         <div className='md:hidden flex justify-center items-center text-primary my-5'>
