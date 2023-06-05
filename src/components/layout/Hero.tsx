@@ -71,7 +71,7 @@ const Hero = () => {
           </motion.h1>
         </div>
 
-        <div className='h-20'>
+        <div className='h-28 md:h-20'>
           <p className='text-xl max-w-xl bg-[#395043]/[.7] py-2'>
             {typing && (
               <>
