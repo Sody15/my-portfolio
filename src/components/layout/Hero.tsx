@@ -3,9 +3,37 @@ import { HiIdentification } from 'react-icons/hi';
 
 import { motion } from 'framer-motion';
 import { scrollIntoView } from '../../utils/scroll';
+import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
+  const typing = true;
+
   const onProjectsClick = () => scrollIntoView('projects');
+
+  const description =
+    "I'm a Front-End Web Developer looking for a new and exciting opportunity. I love to build beautiful fast applications.";
+
+  const [displayDescription, setDisplayDescription] = useState('');
+  const descIndex = useRef(1);
+
+  useEffect(() => {
+    const type = async () => {
+      let interval: number;
+      if (descIndex.current === 1) {
+        interval = 1000;
+      } else {
+        interval = Math.floor(Math.random() * (80 - 20 + 1) + 20);
+      }
+      await new Promise((resolve) => setTimeout(resolve, interval));
+
+      const updatedDisplayDesc = description.slice(0, descIndex.current);
+      setDisplayDescription(updatedDisplayDesc);
+
+      descIndex.current = descIndex.current + 1;
+    };
+
+    type();
+  }, [displayDescription]);
 
   return (
     <section
@@ -42,10 +70,24 @@ const Hero = () => {
             I'm Paul Soderberg
           </motion.h1>
         </div>
-        <p className='text-xl max-w-xl bg-[#395043]/[.7] py-2'>
-          I'm a Front-End Web Developer looking for a new and exciting opportunity. I love to build beautiful fast
-          applications.
-        </p>
+
+        <div className='h-20'>
+          <p className='text-xl max-w-xl bg-[#395043]/[.7] py-2'>
+            {typing && (
+              <>
+                {displayDescription}
+                <motion.span
+                  className='cursor inline-block w-[0.1rem] h-5 bg-white translate-x-1 translate-y-[0.15rem]'
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ delay: 2, duration: 0.5, repeat: Infinity, repeatDelay: 0.5 }}
+                />
+              </>
+            )}
+            {!typing && description}
+          </p>
+        </div>
+
         <button className='btn' type='button' onClick={onProjectsClick}>
           Projects
         </button>
