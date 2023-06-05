@@ -6,8 +6,6 @@ import { scrollIntoView } from '../../utils/scroll';
 import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
-  const typing = true;
-
   const onProjectsClick = () => scrollIntoView('projects');
 
   const description =
@@ -73,18 +71,19 @@ const Hero = () => {
 
         <div className='h-28 md:h-20'>
           <p className='text-xl max-w-xl bg-[#395043]/[.7] py-2'>
-            {typing && (
+            {displayDescription && (
               <>
                 {displayDescription}
+
+                {/* Cursor */}
                 <motion.span
                   className='cursor inline-block w-[0.1rem] h-5 bg-white translate-x-1 translate-y-[0.15rem]'
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ delay: 2, duration: 0.5, repeat: Infinity, repeatDelay: 0.5 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ delay: 7, duration: 0.7, repeat: Infinity, repeatDelay: 0.2 }}
                 />
               </>
             )}
-            {!typing && description}
           </p>
         </div>
 
