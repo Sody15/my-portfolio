@@ -56,18 +56,18 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         </div>
 
         {/* Content */}
-        <div className='tech-used mb-4'>
+        <div className='tech-used mb-4 max-h-[40vh] overflow-y-scroll md:max-h-none'>
           <h3>Tech Used</h3>
           {projectDetails.techUsed.map((tech) => (
             <div key={tech}>{tech}</div>
           ))}
+          <a href={projectDetails.githubLink} target='_blank' className='inline-block'>
+            <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-md w-20 border-2 border-primary'>
+              <AiFillGithub size={30} />
+              Github
+            </div>
+          </a>
         </div>
-        <a href={projectDetails.githubLink} target='_blank' className='inline-block'>
-          <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-md w-20 border-2 border-primary'>
-            <AiFillGithub size={30} />
-            Github
-          </div>
-        </a>
       </motion.div>
     </div>
   );
