@@ -106,16 +106,16 @@ const SideNav = () => {
         delay: 0.8,
         ease: 'backInOut',
       }}
-      className='absolute left-0 flex-col bg-white rounded-r-md items-end hidden md:flex w-32 z-40'
+      className='absolute left-0 flex-col bg-primary text-white rounded-r-md items-end hidden md:flex w-32 z-40'
     >
       <a href='https://github.com/Sody15' target='_blank'>
-        <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-tr-md w-20'>
+        <div className='flex flex-col items-center hover:bg-white hover:text-primary transition-colors p-3 rounded-tr-md w-20'>
           <AiFillGithub size={30} />
           Github
         </div>
       </a>
       <a href='./Resume-PaulSoderberg.pdf' target='_blank'>
-        <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-br-md w-20'>
+        <div className='flex flex-col items-center hover:bg-white hover:text-primary transition-colors p-3 rounded-br-md w-20'>
           <HiIdentification size={30} />
           Resume
         </div>

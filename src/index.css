@@ -26,6 +26,10 @@
   font-display: swap;
 }
 
+html {
+  @apply bg-primary;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   @apply font-normal max-w-[120rem] m-auto text-base;

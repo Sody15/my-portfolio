@@ -7,7 +7,7 @@ import Projects from './components/sections/Projects';
 
 function App() {
   return (
-    <div className='container max-w-[120rem] relative'>
+    <div className='max-w-[120rem] relative bg-white'>
       <Header />
       <Hero />
       <About />
