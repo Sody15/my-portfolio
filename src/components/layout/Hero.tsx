@@ -20,7 +20,7 @@ const Hero = () => {
       if (descIndex.current === 1) {
         interval = 1000;
       } else {
-        interval = Math.floor(Math.random() * (80 - 20 + 1) + 20);
+        interval = Math.floor(Math.random() * (60 - 20 + 1) + 20);
       }
       await new Promise((resolve) => setTimeout(resolve, interval));
 
@@ -80,7 +80,7 @@ const Hero = () => {
                   className='cursor inline-block w-[0.1rem] h-5 bg-white translate-x-1 translate-y-[0.15rem]'
                   initial={{ opacity: 0 }}
                   animate={{ opacity: [1, 0, 1] }}
-                  transition={{ delay: 7, duration: 0.7, repeat: Infinity, repeatDelay: 0.2 }}
+                  transition={{ delay: 6, duration: 0.7, repeat: Infinity, repeatDelay: 0.2 }}
                 />
               </>
             )}
