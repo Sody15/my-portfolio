@@ -56,7 +56,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         </div>
 
         {/* Content */}
-        <div className='tech-used mb-4 max-h-[40vh] overflow-y-scroll md:max-h-none'>
+        <div className='tech-used mb-4 max-h-[40vh] overflow-y-auto md:max-h-none'>
           <h3>Tech Used</h3>
           {projectDetails.techUsed.map((tech) => (
             <div key={tech}>{tech}</div>
