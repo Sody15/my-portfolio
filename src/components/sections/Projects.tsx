@@ -22,7 +22,7 @@ const Projects = () => {
   return (
     <Section
       title='Projects'
-      description='Here you will find some of the personal and clients projects that I created with each project containing its own case study'
+      description='Here are some of my personal projects that I created, proudly showcasing my proficiency using different tools and technologies.'
       id='projects'
       className='flex flex-col'
     >
@@ -39,8 +39,7 @@ const Projects = () => {
       <div className='flex flex-col gap-24'>
         <Project
           title='todo'
-          description='Todo is a simple todo application to keep track of your weekly tasks. It&#39;s a complete full-stack application
-            with authentication and a database.'
+          description='Todo is a comprehensive full-stack application designed to help you stay organized by tracking your tasks. With built-in authentication and a MongoDb database, this simple task tracking application ensures a seamless and secure user experience.'
           link='https://www.todo.paulsoderberg.com'
           projectDetails={{
             techUsed: [
@@ -58,8 +57,7 @@ const Projects = () => {
         />
         <Project
           title='ecommerce'
-          description='Ecommerce is a simple ecommerce application that lets you add and remove items from your shopping cart. I
-        used redux to demonstrate I know it.'
+          description='Ecommerce is a simple user-friendly shopping application. It uses redux for state management to let you effortlessly add and remove items from your shopping cart.'
           link='https://www.ecommerce.paulsoderberg.com'
           projectDetails={{
             techUsed: ['React'],
