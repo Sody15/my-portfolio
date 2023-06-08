@@ -15,19 +15,16 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitted(true);
 
-    // try {
-    //   await emailjs.sendForm(
-    //     'service_2yto9gl',
-    //     'template_9tpabmi',
-    //     form.current as HTMLFormElement,
-    //     'flI8Hu3OYVqrDYBUl'
-    //   );
-    // } catch (err) {
-    //   console.log(err);
-    // }
-
-    const timer = new Promise((resolve) => setTimeout(resolve, 2000));
-    await timer;
+    try {
+      await emailjs.sendForm(
+        'service_2yto9gl',
+        'template_9tpabmi',
+        form.current as HTMLFormElement,
+        'flI8Hu3OYVqrDYBUl'
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
