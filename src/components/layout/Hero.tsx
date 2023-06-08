@@ -6,7 +6,7 @@ import { scrollIntoView } from '../../utils/scroll';
 import { useEffect, useRef, useState } from 'react';
 
 const Hero = () => {
-  const onProjectsClick = () => scrollIntoView('projects');
+  const onAboutClick = () => scrollIntoView('about');
 
   const description =
     "I'm a Front-End Web Developer looking for a new and exciting opportunity. I take pride in building stunning and high performing applications.";
@@ -87,8 +87,8 @@ const Hero = () => {
           </p>
         </div>
 
-        <button className='btn' type='button' onClick={onProjectsClick}>
-          Projects
+        <button className='btn' type='button' onClick={onAboutClick}>
+          About Me
         </button>
       </div>
       <SideNav />
