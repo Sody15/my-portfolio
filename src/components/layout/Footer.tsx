@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='w-full max-w-6xl py-20'>
         <div className='footer__upper pb-10 flex flex-col items-center md:items-start'>
           <h3 className='uppercase'>Paul Soderberg</h3>
-          <p className='text-base max-w-md pt-5'>
+          <p className='text-base max-w-md pt-5 text-center md:text-left'>
             A Front-End Web Developer looking for a new and exciting opportunity.
           </p>
         </div>
