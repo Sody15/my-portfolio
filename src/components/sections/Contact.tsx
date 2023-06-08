@@ -15,19 +15,19 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitted(true);
 
-    try {
-      await emailjs.sendForm(
-        'service_2yto9gl',
-        'template_9tpabmi',
-        form.current as HTMLFormElement,
-        'flI8Hu3OYVqrDYBUl'
-      );
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   await emailjs.sendForm(
+    //     'service_2yto9gl',
+    //     'template_9tpabmi',
+    //     form.current as HTMLFormElement,
+    //     'flI8Hu3OYVqrDYBUl'
+    //   );
+    // } catch (err) {
+    //   console.log(err);
+    // }
 
-    // const timer = new Promise((resolve) => setTimeout(resolve, 2000));
-    // await timer;
+    const timer = new Promise((resolve) => setTimeout(resolve, 2000));
+    await timer;
   };
 
   return (
@@ -62,18 +62,7 @@ const Contact = () => {
           <div className='flex flex-col items-center gap-5'>
             <span className='flex gap-2 items-center'>
               <h3>Thanks!</h3>
-              <motion.h3
-                initial={{ opacity: 0, translateY: '-50%' }}
-                animate={!isSubmitted ? { opacity: 0, translateY: -100 } : { opacity: 100, translateY: 0 }}
-                transition={{
-                  delay: 1,
-                  duration: 0.5,
-                  ease: 'backInOut',
-                }}
-                className='text-4xl'
-              >
-                <BsEmojiSmile />
-              </motion.h3>
+              <BsEmojiSmile size={30} />
             </span>
 
             <motion.p
