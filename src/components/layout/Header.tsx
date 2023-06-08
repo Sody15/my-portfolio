@@ -27,7 +27,7 @@ const Header = () => {
       <div className='text-lg fixed flex justify-between z-50 px-5 lg:px-12 py-3 bg-white shadow-md top-0 max-w-[120rem] w-full whitespace-nowrap'>
         <div className='header__logo flex items-center gap-4'>
           <span className='header__logo-icon h-14 w-14 bg-primary rounded-full flex justify-center items-center'>
-            <img src={faceUrl} alt='my face' width={32} />
+            <img src={faceUrl} alt='my face' width={32} height={46} />
           </span>
           <span className='header__logo-name'>Paul Soderberg</span>
         </div>
