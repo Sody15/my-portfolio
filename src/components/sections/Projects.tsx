@@ -50,6 +50,7 @@ const Projects = () => {
               'MongoDb',
               'NextAuth.js',
               'Tailwind CSS',
+              'Typescript',
             ],
             githubLink: 'https://github.com/Sody15/todo-app',
           }}
@@ -60,7 +61,7 @@ const Projects = () => {
           description='Ecommerce is a simple user-friendly shopping application. It uses redux for state management to let you effortlessly add and remove items from your shopping cart.'
           link='https://www.ecommerce.paulsoderberg.com'
           projectDetails={{
-            techUsed: ['React'],
+            techUsed: ['React', 'Redux', 'Redux Toolkit', 'Sass', 'Typescript'],
             githubLink: 'https://github.com/Sody15/ecommerce-app',
           }}
           onTechUsed={openPopup}

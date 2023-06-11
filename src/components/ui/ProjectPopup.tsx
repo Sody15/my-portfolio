@@ -7,6 +7,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { toggleScroll } from '../../utils/scroll';
 import ProjectDetails from '../../types/ProjectDetails';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import Tag from './Tag';
 
 const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> = ({ projectDetails, onClose }) => {
   const isMediaQuery_Md = useMediaQuery('md');
@@ -41,7 +42,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
           duration: 0.2,
           ease: 'easeIn',
         }}
-        className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-40 rounded-t-xl px-10 pb-16 md:block md:rounded-lg md:min-h-[50vh] md:w-1/2 md:h-1/2 md:top-1/2 md:left-1/2 md:bottom- md:max-w-xl md:p-10'
+        className='popup w-full bg-white shadow-md fixed bottom-0 left-0 z-40 rounded-t-xl px-10 pb-16 md:block md:rounded-lg  md:h-fit md:top-1/2 md:left-1/2 md:max-w-xl md:p-10'
       >
         {/* Close Buttons */}
         <button onClick={onClose} className='absolute top-4 right-4 hidden md:block'>
@@ -58,9 +59,11 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         {/* Content */}
         <div className='tech-used mb-4 max-h-[40vh] overflow-y-auto md:max-h-none'>
           <h3>Tech Used</h3>
-          {projectDetails.techUsed.map((tech) => (
-            <div key={tech}>{tech}</div>
-          ))}
+          <div className='py-6 flex gap-2 flex-wrap'>
+            {projectDetails.techUsed.map((tech) => (
+              <Tag title={tech} key={tech} />
+            ))}
+          </div>
           <a href={projectDetails.githubLink} target='_blank' className='inline-block'>
             <div className='flex flex-col items-center hover:bg-primary hover:text-white transition-colors p-3 rounded-md w-20 border-2 border-primary'>
               <AiFillGithub size={30} />
