@@ -28,6 +28,7 @@
 
 html {
   @apply bg-primary;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
