@@ -22,26 +22,26 @@
   }
 }
 
-.img-ecommerce {
+.img-brewed-awakenings {
   width: 20rem;
   height: 36rem;
-  background-image: url('../../assets/ecommerce-mobile.png');
+  background-image: url('../../assets/coffee-shop-mobile.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
-  @supports (background-image: url('../../assets/ecommerce-mobile.webp')) {
-    background-image: url('../../assets/ecommerce-mobile.webp');
+  @supports (background-image: url('../../assets/coffee-shop-mobile.webp')) {
+    background-image: url('../../assets/coffee-shop-mobile.webp');
   }
 }
 
 @media (min-width: 1024px) {
-  .img-ecommerce {
+  .img-brewed-awakenings {
     width: 100%;
     height: 30rem;
-    background-image: url('../../assets/ecommerce-desktop.png');
+    background-image: url('../../assets/coffee-shop-desktop.png');
     background-size: cover;
     background-position: top;
-    @supports (background-image: url('../../assets/ecommerce-desktop.webp')) {
-      background-image: url('../../assets/ecommerce-desktop.webp');
+    @supports (background-image: url('../../assets/coffee-shop-desktop.webp')) {
+      background-image: url('../../assets/coffee-shop-desktop.webp');
     }
   }
 }

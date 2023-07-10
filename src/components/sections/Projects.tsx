@@ -57,12 +57,12 @@ const Projects = () => {
           onTechUsed={openPopup}
         />
         <Project
-          title='ecommerce'
-          description='Ecommerce is a simple user-friendly shopping application. It uses redux for state management to let you effortlessly add and remove items from your shopping cart.'
-          link='https://www.ecommerce.paulsoderberg.com'
+          title='brewed-awakenings'
+          description="Brewed Awakenings is a user-friendly coffee ecommerce application. It uses NgRx and the Redux pattern for state management to let you effortlessly browse and select products that you'd like to buy."
+          link='https://brewed-awakenings.paulsoderberg.com/'
           projectDetails={{
-            techUsed: ['React', 'Redux', 'Redux Toolkit', 'Sass', 'Typescript'],
-            githubLink: 'https://github.com/Sody15/ecommerce-app',
+            techUsed: ['Angular', 'Rxjs', 'NgRx', 'Redux', 'Typescript', 'Sass', 'BEM Methodology'],
+            githubLink: 'https://github.com/Sody15/coffee-shop',
           }}
           onTechUsed={openPopup}
         />
@@ -82,7 +82,7 @@ const Project: FC<{
     <div className='project flex flex-col lg:grid grid-cols-[60%_auto] gap-10 items-center'>
       <div className={classes[`img-${title}`]} />
       <div className='project__desc flex flex-col items-center lg:items-start'>
-        <h3 className='capitalize'>{title}</h3>
+        <h3 className='capitalize'>{title.replaceAll('-', ' ')}</h3>
         <p className='py-6 text-center lg:text-left'>{description}</p>
         <div className='flex gap-3'>
           <button className='btn whitespace-nowrap' type='button' onClick={() => onTechUsed(projectDetails)}>
