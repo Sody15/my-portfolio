@@ -27,7 +27,7 @@ const About = () => {
           <h3 className='pb-8'>My Skills</h3>
           <div className='flex flex-wrap gap-3 justify-center md:justify-start'>
             {mySkills.map((skill) => (
-              <Tag title={skill} key={skill} />
+              <Tag title={skill.name} key={skill.name} imgSrc={skill.imgSrc} />
             ))}
           </div>
         </div>
@@ -38,24 +38,29 @@ const About = () => {
 
 export default About;
 
-const mySkills = [
-  'React',
-  'Angular',
-  'TypeScript',
-  'JavaScript',
-  'Java',
-  'HTML5',
-  'CSS3',
-  'Sass',
-  'Tailwind CSS',
-  'Responsive Design',
-  'Nx',
-  'Next.js',
-  'Redux Toolkit',
-  'NgRx',
-  'MongoDB',
-  'Oracle SQL',
-  'Jest',
-  'Scrum',
-  'Kanban',
+type Skill = {
+  name: string;
+  imgSrc: string;
+};
+
+const mySkills: Skill[] = [
+  { name: 'React', imgSrc: 'react.png' },
+  { name: 'Angular', imgSrc: 'angular.png' },
+  { name: 'TypeScript', imgSrc: 'typescript.png' },
+  { name: 'JavaScript', imgSrc: 'javascript.png' },
+  { name: 'Java', imgSrc: 'java.png' },
+  { name: 'HTML5', imgSrc: 'html5.png' },
+  { name: 'CSS3', imgSrc: 'css3.png' },
+  { name: 'Sass', imgSrc: 'sass.png' },
+  { name: 'Tailwind CSS', imgSrc: 'tailwind.png' },
+  { name: 'Responsive Design', imgSrc: 'responsive-design.png' },
+  { name: 'Nx', imgSrc: 'nx.png' },
+  { name: 'Next.js', imgSrc: 'nextjs.png' },
+  { name: 'Redux Toolkit', imgSrc: 'redux-devtools.png' },
+  { name: 'NgRx', imgSrc: 'ngrx.png' },
+  { name: 'MongoDB', imgSrc: 'mongodb.png' },
+  { name: 'Oracle SQL', imgSrc: 'oraclesql.png' },
+  { name: 'Jest', imgSrc: 'jest.png' },
+  { name: 'Scrum', imgSrc: 'scrum.png' },
+  { name: 'Kanban', imgSrc: 'kanban.png' },
 ];
