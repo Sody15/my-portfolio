@@ -57,7 +57,7 @@ const ProjectPopup: FC<{ projectDetails: ProjectDetails; onClose: () => void }> 
         </div>
 
         {/* Content */}
-        <div className='tech-used mb-4 max-h-[40vh] overflow-y-auto md:max-h-none'>
+        <div className='tech-used mb-4 overflow-y-auto md:max-h-none'>
           <h3>Tech Used</h3>
           <div className='py-6 flex gap-2 flex-wrap'>
             {projectDetails.techUsed.map((tech) => (
