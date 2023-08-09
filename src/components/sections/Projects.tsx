@@ -88,10 +88,8 @@ const Project: FC<{
           <button className='btn whitespace-nowrap' type='button' onClick={() => onTechUsed(projectDetails)}>
             Tech Used
           </button>
-          <a className='btn whitespace-nowrap relative' target='_blank' href={link}>
-            <span className='absolute left-5 top-[1.07rem]'>
-              <AiOutlineLink />
-            </span>
+          <a className='btn whitespace-nowrap flex justify-center items-center gap-1' target='_blank' href={link}>
+            <AiOutlineLink />
             Link
           </a>
         </div>
